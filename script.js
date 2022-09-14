@@ -23,10 +23,12 @@ fetch("./texts.json")
 // checks the user typed character and displays accordingly
 const typeController = (e) => {
   const newLetter = e.key;
+  // console.log(newLetter)
 
   // Handle backspace press
   if (newLetter == "Backspace") {
     userText = userText.slice(0, userText.length - 1);
+    // console.log(display.removeChild(display.lastChild))
     return display.removeChild(display.lastChild);
   }
 
@@ -47,6 +49,7 @@ const typeController = (e) => {
     display.innerHTML += `<span class="green">${newLetter === " " ? "▪" : newLetter}</span>`;
   } else {
     display.innerHTML += `<span class="red">${newLetter === " " ? "▪" : newLetter}</span>`;
+    errorCount = errorCount + 1
   }
 
   // check if given question text is equal to user typed text
@@ -56,7 +59,9 @@ const typeController = (e) => {
 };
 
 const validate = (key) => {
+  
   if (key === questionText[userText.length - 1]) {
+    // console.log(questionText[userText.length - 1])
     return true;
   }
   return false;
@@ -79,9 +84,10 @@ const gameOver = () => {
   // make it inactive
   display.classList.add("inactive");
   // show result
+  console.log(errorCount)
   resultModal.innerHTML += `
     <h1>Finished!</h1>
-    <p>You took: <span class="bold">${timeTaken}</span> seconds</p>
+    <p>You took: <span class="bold">${Math.round(timeTaken)}</span> seconds</p>
     <p>You made <span class="bold red">${errorCount}</span> mistakes</p>
     <button onclick="closeModal()">Close</button>
   `;
@@ -112,7 +118,7 @@ const start = () => {
 
     // finished timer
     if (count == 0) {
-      console.log(typeof count)
+      // console.log(typeof count)
       // -------------- START TYPING -----------------
       document.addEventListener("keydown", typeController);
 
