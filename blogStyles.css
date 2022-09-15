@@ -8,8 +8,11 @@ body{
     font-weight: 800;
     text-align: center;
     color: blue;
-    margin-top: 5%;
+    margin-top: 2%;
   }
   .red{
     color: red;
+  }
+  .blue{
+    color: blue;
   }
