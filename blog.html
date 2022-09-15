@@ -55,7 +55,22 @@
         </div>
         <br><br><br>
         <!-- third question  -->
-       
+        <div>
+            <h1>
+                3) How event loop work in javascript?
+            </h1>
+            <p>
+                An event loop is a programming construct that allows a program to handle multiple events or tasks simultaneously.
+                <br>
+                In JavaScript event loop is the secret behind  asynchronous programming. JS basically executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading. Let’s take a look how event loop works ....
+                <br><br>
+                In JS, the call stack keeps track of all the operations in line to be executed.The event queue is responsible for sending new functions to the call stack for processing.
+                <br>
+                But whenever an async function is called, it is sent to a browser API (these are APIs built into the browser). Based on the command received from the call stack, the API starts its own single-threaded operation.When a operation is processed transfer to the event queue.
+                <br><br>
+                The <strong>event loop mainly  facilitates the process of constantly checking</strong> whether or not the call stack is empty. If it is empty, new functions are added from the event queue. If it is not, then the current function call is processed.
+            </p>
+        </div>
         <br><br><br>
     </section>
 </body>
