@@ -16,3 +16,8 @@ body{
   .blue{
     color: blue;
   }
+  .body-4{
+    background-color: azure;
+    padding: 2%;
+    border-radius: 10px;
+  }

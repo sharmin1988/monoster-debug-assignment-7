@@ -13,7 +13,7 @@
     <h1 class="heading">Welcome to my "Blogs"</h1>
     <section>
         <!-- first question  -->
-        <div>
+        <div class="body-4">
             <h1>
                 1) Difference between localstorage and session storage ?
             </h1>
@@ -30,9 +30,9 @@
                 storage.
             </p>
         </div>
-        <br><br><br>
+        <br><br>
         <!-- second question  -->
-        <div>
+        <div class="body-4">
             <h1>
                 2) Difference between global scope and block scope in javascript?
             </h1>
@@ -53,25 +53,50 @@
                 The keywords let and const are used to define block variables
             </p>
         </div>
-        <br><br><br>
+        <br><br>
         <!-- third question  -->
-        <div>
+        <div class="body-4">
             <h1>
                 3) How event loop work in javascript?
             </h1>
             <p>
-                An event loop is a programming construct that allows a program to handle multiple events or tasks simultaneously.
+                An <strong>event loop</strong> is a programming construct that allows a program to handle multiple
+                events or tasks simultaneously.
                 <br>
-                In JavaScript event loop is the secret behind  asynchronous programming. JS basically executes all operations on a single thread, but using a few smart data structures, it gives us the illusion of multi-threading. Let’s take a look how event loop works ....
+                Though JS executes all operations on a single thread,The event loop allows JavaScript to perform
+                non-blocking, multiple operations. When an asynchronous task is started, the event loop will start
+                running. <strong>Let’s take a look how event loop works</strong> ....
                 <br><br>
-                In JS, the call stack keeps track of all the operations in line to be executed.The event queue is responsible for sending new functions to the call stack for processing.
+                In JS, the call stack keeps track of all the operations in line to be executed.The event queue is
+                responsible for sending new functions to the call stack for processing.
                 <br>
-                But whenever an async function is called, it is sent to a browser API (these are APIs built into the browser). Based on the command received from the call stack, the API starts its own single-threaded operation.When a operation is processed transfer to the event queue.
-                <br><br>
-                The <strong>event loop mainly  facilitates the process of constantly checking</strong> whether or not the call stack is empty. If it is empty, new functions are added from the event queue. If it is not, then the current function call is processed.
+                But whenever an async function is called, Then JavaScript engine place the function into a queue called
+                a callback queue or a task queue.
+                <br>
+                The event loop is a constantly running process that coordinates the tasks between the call stack and callback queue to achieve concurrency.
+                If the call stack is not empty, the event loop waits until it is empty and places the next function from
+                the callback queue to the call stack. If the callback queue is empty, nothing will happen.
             </p>
         </div>
-        <br><br><br>
+        <br><br>
+        <!-- forth question  -->
+        <div class="body-4">
+            <h1>
+                4) How many types of undefined we will get during work in javascript?
+            </h1>
+            <p>
+                We can get <strong class="red">undefined</strong> from several ways, they are ......
+            <ul>
+                <li>Variables that are not initialized will give undefined</li>
+                <li>Function with no returns</li>
+                <li> During the function call, if the parameter does not send to the function.</li>
+                <li>when return (in a function body) is not defined what to return!!. will give undefined</li>
+                <li>Try to access a property from an object body that (property) does not exist.</li>
+                <li>Try to get index of an array, outside the array length (which is decleared) will give undefined</li>
+            </ul>
+            </p>
+        </div>
+        <br><br>
     </section>
 </body>
 
